@@ -20,11 +20,14 @@ public class StudentController {
         return studentService.getStudent();
 
     }
+
     @PostMapping
-    public void  newStudent(@RequestBody Student s) {
+    public void newStudent(@RequestBody Student s) {
         studentService.addStudent(s);
     }
 
-//@DeleteMapping(path ="/{Student}")
-//    public void deleteStudent()
-//}
+@DeleteMapping(path ="/{StudentID}")
+    public void deleteStudent(@PathVariable Student id){
+        studentService.deleteStudent(id);
+}
+}
